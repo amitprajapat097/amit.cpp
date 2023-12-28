@@ -37,6 +37,7 @@ void printLL(node* head)
 }
 node* sort0_1_2s(node* head)
 {
+    if(head==NULL || head->nxt==NULL)return head;
     node* temp=head;
     node* zerohead=new node(-1);
     node* zero=zerohead;
@@ -82,9 +83,9 @@ node* sort0_1_2s(node* head)
 
 int main()
 {
-    vector<int>arr={2,1,1,1,1,2,2,0,0};
+    vector<int>arr={2,1,2,1,2,1,0,0,0,1};
     node* head=convertIntoLL(arr);
-        cout<<"After sorting"<<endl;
+    cout<<"Before sorting"<<endl;
     printLL(head);
     node* newhead=sort0_1_2s(head);
     cout<<"After sorting"<<endl;
