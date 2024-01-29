@@ -26,6 +26,38 @@ public:
 };
 
 
+// using array 
+bool isPalindrome(LinkedListNode<int> *head) {
+    // Write your code here.
+    if(!head)return true;
+    vector<int>nums;
+    while(head)
+    {
+        nums.push_back(head->data);
+        head=head->next;
+    }
+
+    // check palindrone
+
+    int l=0;
+    int r=nums.size()-1;
+    while(l<=r)
+    {
+        if(nums[l]!=nums[r])
+        {
+            return false;
+        }
+       
+        l++;
+        r--;
+    }
+    return true;
+
+}
+
+
+
+
 // optimal approach
 class Solution {
 public:
